@@ -1,2 +1,3 @@
 # Multi_Cloud_Arc
-Build a three tier arc in both Azure and AWS clouds
+Buiding an three tier arc in both Azure and AWS clouds
+In future i'll add OCI as well
