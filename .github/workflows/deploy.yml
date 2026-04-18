@@ -26,7 +26,12 @@ jobs:
         run: |
           az account show
           az group list
-
+      
+      - name: "Terraform Actions--plan"
+        run: |
+          terraform init
+          terraform validate
+      
       - name: "Terraform Actions--plan"
         run: terraform plan
       - name: Apply Changes
