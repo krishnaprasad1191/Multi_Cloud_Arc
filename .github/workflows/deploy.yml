@@ -27,6 +27,11 @@ jobs:
           az account show
           az group list
 
+      - name: "Terraform Actions--plan"
+        run: terraform plan
+      - name: Apply Changes
+        run: terraform apply --auto-approve
+
   # aws_job:
   #   runs-on: ubuntu-latest
   #   steps:
