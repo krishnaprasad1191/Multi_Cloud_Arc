@@ -1,0 +1,49 @@
+name: Deploying infra on multi cloud
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  azure_job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: "checkout code"
+        uses: actions/checkout@v4
+
+      - name: "Setup Terraform"
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: 1.13.1  
+
+      - name: "azure login"
+        uses: azure/login@v1
+        with:
+          client-id: {{ secrets.AZURE_CLIENT_ID }}
+          client-secrets: {{ secrets.CLIENT_SECRET }}
+          tenant-id: {{ secrets.AZURE_TENANT_ID }}
+          subscription-id: {{ secrets.AZURE_SUBSCRIPTION_ID }}
+
+      - name: "Run Azure CLI Command"
+        run: |
+          az account show
+          az group list
+
+  # aws_job:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: "checkout code"
+  #       uses: actions/checkout@v4
+
+  #     - name: "Setup Terraform"
+  #       uses: hashicorp/setup-terraform@v3
+  #       with:
+  #         terraform_version: 1.13.1
+  #     # Authenticate to Cloud
+  #     - name: "Configure to AWS"
+  #       uses: aws-actions/configure-aws-credentials@v4
+  #       with:
+  #         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+  #         aws-secret-access-key: ${{secrets.AWS_SECRET_ACCESS_KEY}}
+  #         aws-region: ${{secrets.AWS_REGION}}
