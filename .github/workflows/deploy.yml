@@ -21,11 +21,7 @@ jobs:
         uses: azure/login@v1
         with:
           client-id: ${{ secrets.AZURE_CLIENT_ID }}
-<<<<<<< HEAD
           client-secret: ${{ secrets.AZURE_CLIENT_SECRET }}
-=======
-          client-secrets: ${{ secrets.CLIENT_SECRET }}
->>>>>>> 9dd202b74668cf98d14f41438d318af51af08073
           tenant-id: ${{ secrets.AZURE_TENANT_ID }}
           subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
 
