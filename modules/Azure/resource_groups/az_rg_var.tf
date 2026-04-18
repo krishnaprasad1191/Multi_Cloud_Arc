@@ -1,7 +1,7 @@
-variable "East_US" { default = "East US"}
+variable "East_US" { default = "eastus"}
 
-variable "West_US" { default = "West US" }
+variable "West_US" { default = "westus" }
 
-variable "Central_US" { default = "Central US" }
+# variable "Central_US" { default = "Central US" }
 
-variable "Central_India" { default = "Central India" }
+# variable "Central_India" { default = "Central India" }

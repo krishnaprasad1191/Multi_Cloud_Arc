@@ -19,6 +19,6 @@ provider "aws" {
 
 
 module "Azure" {
-  source = "./modules/Azure"
+  source = "./modules/Azure/resource_groups"
   
 }

@@ -27,7 +27,7 @@ jobs:
           az account show
           az group list
       
-      - name: "Terraform Actions--plan"
+      - name: "Terraform Actions -- initializing and validating"
         run: |
           terraform init
           terraform validate
